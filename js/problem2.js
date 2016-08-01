@@ -47,12 +47,12 @@ function isTrafficJam(numberOfAutoRickshaws, isAfterEightPm) {
         changeElementText("#beforeOrAfter", "before");
     }
 
-    var isTrafficJam = false;
+    var isTraffic = false;
     if (numberOfAutoRickshaws > 40 && !isAfterEightPm) {
-        isTrafficJam = true;
+        isTraffic = true;
     }
 
-    if (isTrafficJam) {
+    if (isTraffic) {
         changeElementText("#aOrNo", "a");
     } else {
         changeElementText("#aOrNo", "no");

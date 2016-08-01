@@ -26,4 +26,31 @@
 
 */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function countMoney(notes) {
+
+    var notesString = "";
+    for (var i = 0; i < notes.length; i++) {
+        notesString += notes[i];
+        if (i < notes.length - 1) {
+            notesString += ", ";
+        }
+    }
+    changeElementText("#notes", notesString);
+
+    var validNotes = [5, 10, 20, 50, 100, 500, 1000];
+
+    var total = 0;
+    for (var i = 0; i < notes.length; i++) {
+        if (validNotes.indexOf(notes[i]) !== -1) {
+            total += notes[i];
+        } else {
+            break;
+        }
+    }
+
+    changeElementText("#total", total);
+}
