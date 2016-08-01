@@ -33,4 +33,32 @@
      count: 7
  */
 
-// Write your JavaScript here
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function fixText(text) {
+    var hindu = text[0];
+    var urdu = text[1];
+    var english = text[2];
+
+    changeElementText("#hinduText", toString(hindu));
+    changeElementText("#urduText", toString(urdu));
+    changeElementText("#englishText", toString(english));
+
+    var urduReversed = urdu.reverse();
+    var fixedText = toString(hindu) + toString(urduReversed) + toString(english);
+    changeElementText("#fixedText", fixedText);
+
+    var count = hindu.length + urdu.length + english.length;
+    changeElementText("#count", count);
+}
+
+function toString(text) {
+    var textString = "";
+    for (var i = 0; i < text.length; i++) {
+        textString += text[i] + " ";
+    }
+    return textString;
+}
